@@ -10,7 +10,7 @@ const data = {
             blogtitle: "Raspberry Pi",
             blogexplanation: "Raspberry Pi explanation",
             image: "1.jpg",
-            anasayfa: true
+            anasayfa: true,
         },
         {
             blogid: 2,
