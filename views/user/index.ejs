@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
-    <title><%= title %> - Ahmet</title>
+    <%- include('../partials/head') %>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
-        <div class="container">
-            <a href="/" class="navbar-brand">Blogapp</a>
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a href="/x" class="nav-link">Blog Listesi</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <%- include('../partials/nav') %>
     <div class="container mt-3">
         <div class="row">
 
             <div class="col-md-3">
-                <%- include('../partials/category-menu') %>
+                <div class="list-group">
+                    <a href="" class="list-group-item list-group-active">Tüm Kategoriler</a>
+                    <% catagories.forEach(catagory => { %>                    
+                        <%- include("../partials/catagory-menu", {catagory}) %> 
+                    <% }) %>
+                </div>
             </div>
             <div class="col md-9">
-                <h1 class="h3"><%= title %></h1>
+                <h1 class="h3 mb-3"><%= title %></h1>
                 <% blogs.forEach(blog => { %>                    
-                    <%- include("../partials/blog-card", blog)  %> 
+                    <%- include("../partials/blog-card", {blog}) %> 
                 <% }) %>
             </div>
             
